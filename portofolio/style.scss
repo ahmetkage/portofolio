@@ -1,0 +1,165 @@
+// Variabelen
+$font-family: "Lorum Ipsum";
+$primary-color: #739547;
+$secondary-color: #64854B;
+$button-color: #8EB162;
+$footer-color: #A2BF7F;
+
+// Namespace
+$margin-namespace: margin;
+$background-namespace: background;
+$font-namespace: font;
+
+// Media queries
+$mobile-breakpoint: 600px;
+$tablet-breakpoint: 900px;
+
+// Basisstijlen
+* {
+  padding: 0;
+  margin: 0;
+  font-family: $font-family;
+}
+
+// Header
+header {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 20px;
+  background-color: $primary-color;
+  height: 10vh;
+}
+
+// Navigatie
+nav {
+  display: flex;
+  padding: 1%;
+  align-items: center;
+  background-color: $secondary-color;
+  height: 1vh;
+  justify-content: flex-start;
+}
+
+.nav-links {
+  padding-left: 22px;
+  flex: 1;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+// Body
+body {
+  background-color: #ffffff;
+}
+
+// Footer
+footer {
+  background-color: $footer-color;
+  height: 50px;
+  margin-top: 40px;
+  border-radius: 40px;
+  margin-left: 450px;
+  margin-right: 450px;
+  text-align: center;
+  padding-top: 5px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer:hover {
+  cursor: pointer;
+  color: rgb(20, 161, 7);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+// Hoofdinhoud
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// Profielfoto
+.profile-photo {
+  width: 250px;
+  height: auto;
+  border-radius: 50%;
+}
+
+// Rijen
+.top-row,
+.middle-row,
+.bottom-row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+// Knopstijlen
+.button1,
+.button2,
+.button3 {
+  width: 250px;
+  height: 220px;
+  transition: 0.5s;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  background-color: $button-color;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding-top: 5px;
+
+  // &-selectors
+  &.button1 {
+    // Specifieke stijlen voor button1
+  }
+
+  &.button2 {
+    // Specifieke stijlen voor button2
+  }
+
+  &.button3 {
+    // Specifieke stijlen voor button3
+  }
+
+  // &:hover
+  &:hover {
+    // Stijlen voor hover-effect
+  }
+}
+
+// Marge tussen elementen
+.middle-row > * + *,
+.bottom-row > * + * {
+  margin-left: 50px;
+}
+
+// Media queries voor mobiel en tablet
+@media only screen and (max-width: $mobile-breakpoint) {
+  // Stijlen voor mobiele weergave
+}
+
+@media only screen and (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+  // Stijlen voor tabletweergave
+}
