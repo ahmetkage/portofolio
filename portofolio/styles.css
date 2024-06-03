@@ -1,156 +1,260 @@
 * {
-    padding: 0;
-    margin: 0;
-    font-family: "Lorum Ipsum";
+  padding: 0;
+  margin: 0;
+  font-family: "Arial, sans-serif"; /* Verander naar een web-safe font */
+}
+
+header {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 20px;
+  background-color: #739547;
+  height: 10vh;
+  color: #fff; /* Zorgt voor beter contrast */
+}
+
+nav {
+  display: flex;
+  padding: 1%;
+  align-items: center;
+  background-color: #64854B;
+  height: auto;
+  justify-content: flex-start;
+}
+
+.nav-links {
+  padding-left: 22px;
+  flex: 1;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links ul {
+  display: flex;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #000000; /* Verander naar wit voor beter contrast */
+  font-size: 18px;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.footer {
+  background-color: #A2BF7F;
+  height: 50px;
+  margin-top: 40px;
+  border-radius: 40px;
+  margin-left: 450px;
+  margin-right: 450px;
+  text-align: center;
+  padding-top: 5px;
+  color: #fff; /* Zorgt voor beter contrast */
+}
+
+.footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 250px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.top-row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.middle-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.middle-row .button1,
+.middle-row .button3 {
+  width: calc(250px + 200px);
+  height: 220px;
+  transition: 0.5s;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  background-color: #8EB162;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #000000; /* Verander naar wit voor beter contrast */
+}
+
+button {
+  width: 250px;
+  height: 220px;
+  transition: 0.5s;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  background-color: #8EB162;
+  font-weight: bold;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding-top: 5px;
+  color: #000000; /* Verander naar wit voor beter contrast */
+}
+
+.middle-row > * + *,
+.bottom-row > * + * {
+  margin-left: 50px;
+}
+
+footer {
+  background-color: #A2BF7F;
+  height: 50px;
+  margin-top: 40px;
+  border-radius: 40px;
+  margin-left: 450px;
+  margin-right: 450px;
+  text-align: center;
+  padding-top: 5px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000; /* Zorgt voor beter contrast */
+}
+
+footer:hover {
+  cursor: pointer;
+  color: rgb(20, 161, 7);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+article {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 23px;
+}
+
+a {
+  font-size: 20px;
+}
+
+header {
+  font-size: 30px;
+}
+
+@media (max-width: 1200px) {
+  .middle-row, .bottom-row {
+      flex-direction: column;
+      align-items: center;
   }
-  
-  header {
-    text-align: center;
-    font-size: 30px;
-    padding-top: 20px;
-    background-color: #739547;
-    height: 10vh;
-  }
-  
-  nav {
-    display: flex;
-    padding: 1%;
-    align-items: center;
-    background-color: #64854B;
-    height: 1vh;
-    justify-content: flex-start;
-  }
-  
-  .nav-links {
-    padding-left: 22px;
-    flex: 1;
-    text-align: right;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-  }
-  
-  .nav-links ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-  }
-  
-  body {
-    background-color: #ffffff;
-  }
-  
-  .footer {
-    background-color: #A2BF7F;
-    height: 50px;
-    margin-top: 40px;
-    border-radius: 40px;
-    margin-left: 450px;
-    margin-right: 450px;
-    text-align: center;
-    padding-top: 5px;
-  }
-  
-  .footer a {
-    text-decoration: none;
-  }
-  
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .profile-photo {
-    width: 250px; /* Aanpassen aan de gewenste grootte van de foto */
-    height: auto;
-    border-radius: 50%; /* Afgeronde hoeken voor de foto */
-  }
-  
-  .top-row {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-  
-  .middle-row {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-  
-  .bottom-row {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-  
-  .middle-row .button1,
-  .middle-row .button3 {
-    width: calc(250px + 200px); /* Voeg 200px toe aan de breedte van de knoppen */
-    height: 220px;
-    transition: 0.5s;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    background-color: #8EB162;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  
-  button {
-    width: 250px;
-    height: 220px;
-    transition: 0.5s;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    background-color: #8EB162;
-    font-weight: bold;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    padding-top: 5px;
-  }
-  
+
   .middle-row > * + *,
   .bottom-row > * + * {
-    margin-left: 50px; /* Voeg 50px ruimte toe tussen de containers */
+      margin-left: 0;
+      margin-top: 20px;
   }
-  
-  footer{
-    background-color: #A2BF7F;
-    height: 50px;
-    margin-top: 40px;
-    border-radius: 40px;
-    margin-left: 450px ;
-    margin-right: 450px ;
-    text-align: center;
-    padding-top: 5px;
-    text-decoration: none; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .footer {
+      margin-left: 20px;
+      margin-right: 20px;
   }
-  
-  footer :hover {
-    cursor: pointer;
-    color: rgb(20, 161, 7);
-    text-decoration: none;
-    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-links ul {
+      flex-direction: column;
+      align-items: flex-start;
   }
-  
-  a{
-    text-decoration: none;
-    color: inherit;
+
+  .nav-links ul li {
+      padding: 5px 0;
   }
+
+  .nav-links {
+      justify-content: center;
+      text-align: center;
+      padding-left: 0;
+  }
+
+  header {
+      font-size: 24px;
+  }
+
+  .middle-row .button1,
+  .middle-row .button3,
+  .bottom-row .button1,
+  .bottom-row .button3 {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-photo {
+      width: 150px;
+  }
+
+  header {
+      font-size: 20px;
+  }
+
+  nav {
+      height: auto;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav-links {
+      padding: 0;
+      text-align: center;
+  }
+
+  .footer {
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 14px;
+  }
+
+  button {
+      width: 100%;
+      padding: 10px;
+  }
+}
