@@ -8,60 +8,56 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>Portfolio</header>
+  <header>Portfolio Ahmet Enes</header>
   <nav>
-    <section class="nav-links">
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-      </ul>
-    </section>
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+    </ul>
   </nav>
   <main>
     <section class="top-row">
-      <img class="profile-photo" src="pfp.PNG" alt="profiel foto van Ahmet Enes">
+      <picture>
+        <source srcset="pfp.avif" type="image/avif">
+        <source srcset="pfp.webp" type="image/webp">
+        <img class="profile-photo" src="pfp.PNG" alt="profiel foto van Ahmet Enes" width="250" height="250">
+      </picture>
     </section>
     <section class="middle-row">
-      <button class="button1">
+      <button class="button1" aria-label="Contacten">
         <h3>Contacten</h3>
-         <br>
         <article>
           <p>Telefoon: 06 111111111</p>
-          <p>Email: <a href="mail:90student.zadkine.nl">90student.zadkine.nl</a></p>
+          <p>Email: <a href="mailto:90student@zadkine.nl">90student@zadkine.nl</a></p>
         </article>
       </button>
-      <button class="button2">
+      <button class="button2" aria-label="Wie ben ik?">
         <h3>Wie ben ik?</h3>
-         <br>
         <article>
           <p>Ik ben Ahmet Enes, 17 jaar oud. Ik hou van coderen en gamen.</p>
         </article>
       </button>
-      <button class="button3">
+      <button class="button3" aria-label="Kennis en ervaring">
         <h3>Kennis en ervaring</h3>
-         <br>
         <article>
           <p>1 jaar ervaring met Java en 1,5 jaar met HTML, PHP en SQL.</p>
         </article>
       </button>
     </section>
     <section class="bottom-row">
-      <button class="button1">
+      <button class="button1" aria-label="Opleiding">
         <h3>Opleiding</h3>
-         <br>
         <article>
           <p>Software Developer, MBO 4, 1e jaar.</p>
         </article>
       </button>
-      <button class="button2">
+      <button class="button2" aria-label="Deze opleiding">
         <h3>Deze opleiding</h3>
-         <br>
         <article>
           <p>Ik vond het altijd fascinerend hoe je iets kan maken wat zo handig kan zijn.</p>
         </article>
       </button>
-      <button class="button3">
+      <button class="button3" aria-label="Werkervaring">
         <h3>Werkervaring</h3>
-         <br>
         <article>
           <p>Ik heb bij een bedrijf gewerkt voor 1 jaar en heb ervaring met game development.</p>
         </article>
@@ -69,7 +65,50 @@
     </section>
   </main>
   <footer>
-    <a href="https://github.com/ahmetkage">Github</a>
+    <a href="https://github.com/ahmetkage">GitHub</a>
   </footer>
+
+  <script>
+    let ws;
+
+    function initWebSocket() {
+      if (ws) {
+        ws.close(); // Close any existing WebSocket connection
+      }
+
+      ws = new WebSocket('ws://example.com/socket');
+      ws.onopen = () => console.log('WebSocket connection opened');
+      ws.onmessage = (message) => console.log('Received:', message.data);
+      ws.onclose = () => console.log('WebSocket connection closed');
+    }
+
+    function reconnectWebSocket() {
+      console.log('Reconnecting WebSocket due to bfcache restoration');
+      initWebSocket();
+    }
+
+    // Check if bfcache is supported and handle accordingly
+    if ('onpageshow' in window) {
+      window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+          // Page was restored from bfcache
+          reconnectWebSocket();
+        } else {
+          // Normal page load
+          initWebSocket();
+        }
+      });
+    } else {
+      // Browser doesn't support bfcache
+      initWebSocket();
+    }
+
+    // Handle pagehide to close WebSocket when navigating away
+    window.addEventListener('pagehide', () => {
+      if (ws) {
+        ws.close();
+      }
+    });
+  </script>
 </body>
 </html>
